@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Glass Heart Shape with Gradient -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M54,80 C40,68 20,52 20,38 C20,28 26,22 34,22 C40,22 46,26 54,34 C62,26 68,22 74,22 C82,22 88,28 88,38 C88,52 68,68 54,80 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startY="22"
+                android:endY="80"
+                android:startColor="#E91E63"
+                android:endColor="#9C27B0"
+                android:type="linear"/>
+        </aapt:attr>
+    </path>
+    
+    <!-- Crack Lines - representing fragility -->
+    <path
+        android:strokeWidth="1.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeAlpha="0.7"
+        android:pathData="M54,45 L58,52 L62,48" />
+    <path
+        android:strokeWidth="1.5"
+        android:strokeColor="#FFFFFF"
+        android:strokeAlpha="0.7"
+        android:pathData="M46,50 L42,56" />
+</vector>
