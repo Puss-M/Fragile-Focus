@@ -17,7 +17,7 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-      - uses: android-actions/setup-android@v3
+      # ubuntu runner 自带 Android SDK（含 compileSdk 34 所需组件），无需额外 setup-android
       # 仓库暂未提交 gradle wrapper，CI 直接使用与 AGP 8.2 兼容的 Gradle 版本
       - uses: gradle/actions/setup-gradle@v4
         with:
