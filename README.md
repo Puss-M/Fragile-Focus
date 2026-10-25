@@ -1,6 +1,7 @@
 # Fragile Focus (玻璃心) 🤢💔
 
 <p align="center">
+  <img src="https://github.com/Puss-M/Fragile-Focus/actions/workflows/ci.yml/badge.svg" alt="CI"/>
   <img src="https://img.shields.io/badge/Android-8.0+-3DDC84?logo=android&logoColor=white" alt="Android 8.0+"/>
   <img src="https://img.shields.io/badge/Kotlin-1.9.20-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin"/>
   <img src="https://img.shields.io/badge/Jetpack%20Compose-2024.01-4285F4?logo=jetpackcompose&logoColor=white" alt="Compose"/>
