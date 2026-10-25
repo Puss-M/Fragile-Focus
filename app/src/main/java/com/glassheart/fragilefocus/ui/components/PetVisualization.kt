@@ -163,7 +163,7 @@ private fun CriticalPet() {
  */
 @Composable
 private fun DeadPet() {
-    val rotation by remember {
+    val rotation = remember {
         Animatable(0f)
     }
     
