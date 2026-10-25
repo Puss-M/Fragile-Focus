@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.glassheart.fragilefocus.domain.PetState
@@ -190,6 +191,3 @@ private fun DeadPet() {
         )
     }
 }
-
-// 扩展函数 - 用于更新Modifier
-import androidx.compose.ui.graphics.graphicsLayer
