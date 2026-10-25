@@ -1,8 +1,21 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
 }
+
+// Supabase 配置从 local.properties（已 gitignore）读取；缺省回退到当前公开 anon key
+val localProps = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+val supabaseUrl: String = localProps.getProperty("supabase.url")
+    ?: "https://axnhzoabnqtjfctuklat.supabase.co"
+val supabaseAnonKey: String = localProps.getProperty("supabase.anonKey")
+    ?: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4bmh6b2FibnF0amZjdHVrbGF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MzA0MTgsImV4cCI6MjA4MDMwNjQxOH0.NTYlO6hxnNym-PhyxajAy62NnFkjt0RXLhtEQzgJAZo"
 
 android {
     namespace = "com.glassheart.fragilefocus"
@@ -20,9 +33,9 @@ android {
             useSupportLibrary = true
         }
 
-        // Supabase Configuration
-        buildConfigField("String", "SUPABASE_URL", "\"https://axnhzoabnqtjfctuklat.supabase.co\"")
-        buildConfigField("String", "SUPABASE_KEY", "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4bmh6b2FibnF0amZjdHVrbGF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MzA0MTgsImV4cCI6MjA4MDMwNjQxOH0.NTYlO6hxnNym-PhyxajAy62NnFkjt0RXLhtEQzgJAZo\"")
+        // Supabase Configuration（来自 local.properties，见文件顶部）
+        buildConfigField("String", "SUPABASE_URL", "\"\"$supabaseUrl\"\"")
+        buildConfigField("String", "SUPABASE_KEY", "\"\"$supabaseAnonKey\"\"")
     }
 
     buildTypes {
@@ -49,9 +62,6 @@ android {
         buildConfig = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4"
-    }
 
     packaging {
         resources {
