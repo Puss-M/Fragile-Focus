@@ -18,11 +18,8 @@ jobs:
           distribution: temurin
           java-version: "17"
       # ubuntu runner 自带 Android SDK（含 compileSdk 34 所需组件），无需额外 setup-android
-      # 仓库暂未提交 gradle wrapper，CI 直接使用与 AGP 8.2 兼容的 Gradle 版本
-      - uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: "8.7"
-      - run: gradle assembleDebug --no-daemon
+      - uses: gradle/actions/setup-gradle@v4   # 缓存 ~/.gradle，Gradle 版本由已提交的 wrapper 决定
+      - run: ./gradlew assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
           name: fragile-focus-debug-apk
