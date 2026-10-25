@@ -34,8 +34,8 @@ android {
         }
 
         // Supabase Configuration（来自 local.properties，见文件顶部）
-        buildConfigField("String", "SUPABASE_URL", "\"\"$supabaseUrl\"\"")
-        buildConfigField("String", "SUPABASE_KEY", "\"\"$supabaseAnonKey\"\"")
+        buildConfigField("String", "SUPABASE_URL", "\"$supabaseUrl\"")
+        buildConfigField("String", "SUPABASE_KEY", "\"$supabaseAnonKey\"")
     }
 
     buildTypes {
