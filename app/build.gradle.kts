@@ -67,6 +67,8 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.8.2")
     // themes.xml 的 Theme.Material3.DayNight 需要 XML 侧 material 库（Compose material3 不提供）
     implementation("com.google.android.material:material:1.11.0")
+    // PetManager/ToxicityCalculator 使用 JSR-330 注解（@Inject/@Singleton）
+    implementation("javax.inject:javax.inject:1")
 
     // Jetpack Compose
     val composeBom = platform("androidx.compose:compose-bom:2024.01.00")
